@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  portfolio:
+    build: .
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    #   target: builder
+    container_name: portfolio
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - ./portfolio:/app
+
+volumes:
+  portfolio:
