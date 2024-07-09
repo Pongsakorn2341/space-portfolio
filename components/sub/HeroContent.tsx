@@ -1,13 +1,12 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
 import {
   slideInFromLeft,
   slideInFromRight,
   slideInFromTop,
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { HiDownload } from "react-icons/hi";
 
@@ -78,28 +77,18 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          Hello, I'm Pongsakorn. I'm a full-stack developer with 3 years of
-          experience. I enjoy building sites & apps. My focus is React
+          Hello, I&apos;m Pongsakorn. I&apos;m a full-stack developer with 3
+          years of experience. I enjoy building sites & apps. My focus is React
           (Next.js).
         </motion.p>
-        {/* <motion.a
-          variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
-        >
-          Learn More!
-        </motion.a> */}
         <motion.a
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] group bg-white px-7 py-3 flex items-center gap-2 outline-none focus:scale-110 hover:scale-110 active:scale-105 transition borderBlack "
           href="/information/PONGSAKORN_CV.pdf"
           download
         >
-          {/* <a className="group bg-white px-7 py-3 flex items-center gap-2 outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer dark:bg-white/10"> */}
           Download CV{" "}
           <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
-          {/* </a> */}
-          {/* Download CV
-          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" /> */}
         </motion.a>
       </div>
 
