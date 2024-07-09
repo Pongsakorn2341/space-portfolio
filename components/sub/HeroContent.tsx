@@ -9,6 +9,7 @@ import {
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import { HiDownload } from "react-icons/hi";
 
 const HeroContent = () => {
   return (
@@ -27,33 +28,78 @@ const HeroContent = () => {
             Fullstack Developer Portfolio
           </h1>
         </motion.div>
+        <div className="flex items-center justify-start">
+          <div className="relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                type: "tween",
+                duration: 0.2,
+              }}
+            >
+              <Image
+                src="/information/Profile.jpg"
+                alt="Pongsakorn portrait"
+                width="192"
+                height="192"
+                quality="95"
+                priority={true}
+                className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+              />
+            </motion.div>
 
+            <motion.span
+              className="absolute bottom-0 right-0 text-4xl"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 125,
+                delay: 0.1,
+                duration: 0.7,
+              }}
+            >
+              👋
+            </motion.span>
+          </div>
+        </div>
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
+          className="flex flex-col gap-6 text-4xl sm:text-6xl p-2 font-bold text-white max-w-[600px] w-auto h-auto"
         >
-          <span>
-            Pongsakorn 3 Prasoppornpiboon
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              {" "}
-              the best{" "}
-            </span>
-            project exprience
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            Pongsakorn
           </span>
+          <span className="text-2xl lg:text-4xl">Prasoppornpiboon</span>
         </motion.div>
 
         <motion.p
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          I&apos;m a Full Stack Software Engineer with experience in Website,
-          Mobile, and Software development. Check out my projects and skills.
+          Hello, I'm Pongsakorn. I'm a full-stack developer with 3 years of
+          experience. I enjoy building sites & apps. My focus is React
+          (Next.js).
         </motion.p>
-        <motion.a
+        {/* <motion.a
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
           Learn More!
+        </motion.a> */}
+        <motion.a
+          variants={slideInFromLeft(1)}
+          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] group bg-white px-7 py-3 flex items-center gap-2 outline-none focus:scale-110 hover:scale-110 active:scale-105 transition borderBlack "
+          href="/information/PONGSAKORN_CV.pdf"
+          download
+        >
+          {/* <a className="group bg-white px-7 py-3 flex items-center gap-2 outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer dark:bg-white/10"> */}
+          Download CV{" "}
+          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
+          {/* </a> */}
+          {/* Download CV
+          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" /> */}
         </motion.a>
       </div>
 
